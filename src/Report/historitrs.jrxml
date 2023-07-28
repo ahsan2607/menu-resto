@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b22c7745-8c30-4362-a3a8-989cc82c658f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="dc1" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dc2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select tbtrs.idtrs, tbtrs.tgltrs, tbtrs.ttlbyrtrs, tbpgn.nmpgn, tbplg.nmplg from tbtrs inner join tbpgn inner join tbplg on tbtrs.idpgntrs = tbpgn.idpgn and tbtrs.idplgtrs = tbplg.idplg where tbtrs.tgltrs between $P{dc1} and $P{dc2} order by tbtrs.tgltrs desc]]>
+	</queryString>
+	<field name="idtrs" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgltrs" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ttlbyrtrs" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nmpgn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nmplg" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="15" width="555" height="36" uuid="c02f8a66-79ab-40e4-8d01-0027e19e328c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Histori Transaksi Pantherestaurant]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="100" height="20" uuid="d40a0d83-1ca9-4643-8fb2-52f96d792edb"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[idtrs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="2" width="100" height="20" uuid="493163bc-c787-4078-bbec-4075ab7d731e"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[tgltrs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="457" y="2" width="98" height="20" uuid="2d83c9ef-d2d0-4873-8431-65f5067b2d25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[ttlbyrtrs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="334" y="2" width="123" height="20" uuid="a392e4f5-b1c3-416f-ad8c-b14dbafb741d"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[nmpgn]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="2" width="134" height="20" uuid="ef90ff55-0739-414f-a4ed-330275cef8d3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[nmplg]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="3" width="100" height="20" uuid="3daf67bb-4113-45cf-a651-a9c806106ee8"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{idtrs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="07c12acf-4147-4cdf-8603-9e12e876b558"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tgltrs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="457" y="3" width="98" height="20" uuid="f618c9d2-4ff7-4385-bf35-a0ff8e403b52"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ttlbyrtrs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="334" y="0" width="123" height="20" uuid="e4693c58-ca4a-43e8-9ded-5fc776aa4743"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nmpgn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="134" height="20" uuid="bbc6ec10-6b32-4120-b2fb-dce478667076"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nmplg}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="4" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="3" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="3" splitType="Stretch"/>
+	</summary>
+</jasperReport>
